@@ -19,7 +19,6 @@ resource "aws_instance" "web" {
   instance_type   = "t3.small"
   security_groups = [aws_security_group.allow_web_traffic.name]
 
-  key_name = aws_key_pair.ssh_key.key_name
   user_data = templatefile("boot.sh", {
     client_id     = var.client_id,
     client_secret = var.client_secret,

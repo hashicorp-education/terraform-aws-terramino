@@ -1,8 +1,3 @@
-resource "aws_key_pair" "ssh_key" {
-  key_name   = "ssh"
-  public_key = file("/Users/brian/.ssh/id_ed25519.pub")
-}
-
 resource "aws_security_group" "allow_web_traffic" {
   name        = "allow_web_traffic"
   description = "Allow inbound web traffic and all outbound traffic"
