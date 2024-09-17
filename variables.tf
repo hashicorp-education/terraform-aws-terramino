@@ -1,6 +1,5 @@
 variable "client_id" {
   type      = string
-  sensitive = true
 }
 
 variable "client_secret" {
@@ -10,10 +9,8 @@ variable "client_secret" {
 
 variable "org_id" {
   type      = string
-  sensitive = true
 }
 
 variable "project_id" {
   type      = string
-  sensitive = true
 }
