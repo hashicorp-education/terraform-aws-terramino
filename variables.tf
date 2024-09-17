@@ -1,15 +1,19 @@
 variable "client_id" {
-  type      = string
+  type = string
 }
 
 variable "client_secret" {
-  type      = string
+  type = string
 }
 
 variable "org_id" {
-  type      = string
+  type = string
 }
 
 variable "project_id" {
-  type      = string
+  type = string
+}
+
+variable "waypoint_application" {
+  type = string
 }
