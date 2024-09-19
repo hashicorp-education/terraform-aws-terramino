@@ -17,4 +17,4 @@ cd /tmp
 git clone https://github.com/hashicorp-education/terramino-go.git
 cd terramino-go
 
-go run main.go
+APP_NAME=${app_anem} go run main.go
