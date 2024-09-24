@@ -29,6 +29,6 @@ resource "aws_instance" "web" {
   })
 
   tags = {
-    Name = "terramino-web"
+    Name = "terramino-${var.waypoint_application}"
   }
 }
