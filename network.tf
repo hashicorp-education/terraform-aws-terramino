@@ -6,9 +6,9 @@ resource "aws_security_group" "allow_web_traffic" {
 resource "aws_vpc_security_group_ingress_rule" "allow_web" {
   security_group_id = aws_security_group.allow_web_traffic.id
   cidr_ipv4         = "0.0.0.0/0"
-  from_port         = 8080
+  from_port         = var.port
   ip_protocol       = "tcp"
-  to_port           = 8080
+  to_port           = var.port
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {

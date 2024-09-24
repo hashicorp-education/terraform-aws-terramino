@@ -24,7 +24,8 @@ resource "aws_instance" "web" {
     client_secret = var.client_secret,
     org_id        = var.org_id,
     project_id    = var.project_id,
-    app_name      = var.waypoint_application
+    app_name      = var.waypoint_application,
+    port          = var.port
   })
 
   tags = {
