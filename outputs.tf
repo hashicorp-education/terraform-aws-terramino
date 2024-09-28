@@ -1,5 +1,5 @@
 output "hostname" {
-  value = "http://${aws_instance.web.public_ip}:${var.port}"
+  value = "http://${aws_instance.web.public_ip}"
 }
 
 output "ip" {
