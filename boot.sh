@@ -10,7 +10,7 @@ export GOMODPATH="/tmp/go/pkg/mod"
 export GOCACHE="/tmp/go/cache"
 
 cd /tmp
-git clone https://github.com/BrianMMcClain/terramino-go-ssm.git
+git clone https://github.com/hashicorp-education/terramino-go.git
 cd terramino-go-ssm
 
 git checkout ssm
