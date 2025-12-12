@@ -8,16 +8,15 @@ export HOME="/tmp/home"
 export GOPATH="/tmp/go"
 export GOMODPATH="/tmp/go/pkg/mod"
 export GOCACHE="/tmp/go/cache"
-export HCP_CLIENT_ID=${client_id}
-export HCP_CLIENT_SECRET=${client_secret}
-export HCP_ORGANIZATION_ID=${org_id}
-export HCP_PROJECT_ID=${project_id}
 
 cd /tmp
-git clone https://github.com/hashicorp-education/terramino-go.git
-cd terramino-go
+git clone https://github.com/BrianMMcClain/terramino-go-ssm.git
+cd terramino-go-ssm
 
-# Temporarily checkout a previous version of terramino-go
-git checkout 58d39908e07424cba3b0c2f2d9588d9cebfa476b
+git checkout ssm
+
+# Use the AWS instance metadata API to get the instance's region
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 600")
+export AWS_REGION=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/placement/region)
 
 APP_NAME=${app_name} TERRAMINO_PORT=${port} go run main.go
