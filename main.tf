@@ -19,13 +19,11 @@ resource "aws_instance" "web" {
   instance_type   = "t3.small"
   security_groups = [aws_security_group.allow_web_traffic.name]
 
+  iam_instance_profile = aws_iam_instance_profile.redis_read_ssm.name
+
   user_data = templatefile("boot.sh", {
-    client_id     = var.client_id,
-    client_secret = var.client_secret,
-    org_id        = var.org_id,
-    project_id    = var.project_id,
-    app_name      = var.waypoint_application,
-    port          = var.port
+    app_name = var.waypoint_application,
+    port     = var.port
   })
 
   tags = {
