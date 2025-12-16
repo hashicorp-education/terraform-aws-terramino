@@ -11,7 +11,7 @@ export GOCACHE="/tmp/go/cache"
 
 cd /tmp
 git clone https://github.com/hashicorp-education/terramino-go.git
-cd terramino-go-ssm
+cd terramino-go
 
 git checkout ssm
 
